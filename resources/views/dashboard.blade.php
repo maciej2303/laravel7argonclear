@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container-fluid">
-        {{-- YOUR CONTENT --}}
+    <div class="container-fluid py-5">
+        <h1>Witaj {{ auth()->user()->name }}, w panelu administratora!</h1>
     </div>
 @endsection
 
