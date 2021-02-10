@@ -60,13 +60,13 @@
                 </div>
                 <div class="row mt-3">
                     {{-- Remind passowrd --}}
-                    <div class="col-6">
+                    {{-- <div class="col-6">
                         @if (Route::has('password.request'))
                             <a href="{{ route('password.request') }}" class="text-light">
                                 <small>{{ __('Zapomniałeś hasło?') }}</small>
                             </a>
                         @endif
-                    </div>
+                    </div> --}}
                     {{-- Remind passowrd --}}
 
                     {{-- Register --}}
