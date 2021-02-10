@@ -1,20 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="header bg-gradient-primary py-7 py-lg-8">
+    <div class="container">
+        <div class="header-body text-center mb-7">
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Confirm Password') }}</div>
+                <div class="card-header">{{ __('Potwierdź hasło') }}</div>
 
                 <div class="card-body">
-                    {{ __('Please confirm your password before continuing.') }}
+                    {{ __('Prosze potwierdzić przed zmianą hasła.') }}
 
                     <form method="POST" action="{{ route('password.confirm') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Hasło') }}</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -30,12 +37,12 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Confirm Password') }}
+                                    {{ __('Potwierdź hasło') }}
                                 </button>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Zapomniałeś swoje hasło?') }}
                                     </a>
                                 @endif
                             </div>

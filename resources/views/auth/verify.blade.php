@@ -1,7 +1,12 @@
 @extends('layouts.app', ['class' => 'bg-default'])
 
 @section('content')
-    @include('layouts.headers.guest')
+    <div class="header bg-gradient-primary py-7 py-lg-8">
+        <div class="container">
+            <div class="header-body text-center mb-7">
+            </div>
+        </div>
+    </div>
 
     <div class="container mt--8 pb-5">
         <div class="row justify-content-center">
@@ -9,21 +14,21 @@
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
-                            <small>{{ __('Verify Your Email Address') }}</small>
+                            <small>{{ __('Zweryfikuj swój adres email') }}</small>
                         </div>
                         <div>
                             @if (session('resent'))
                                 <div class="alert alert-success" role="alert">
-                                    {{ __('A fresh verification link has been sent to your email address.') }}
+                                    {{ __('Nowy link został wysłany na twoje konto email') }}
                                 </div>
                             @endif
-                            
-                            {{ __('Before proceeding, please check your email for a verification link.') }}
+
+                            {{ __('Sprawdz maila po link weryfikacyjny.') }}
                             @if (Route::has('verification.resend'))
                                 {{ __('If you did not receive the email') }},
                                 <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                                     @csrf
-                                    <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                                    <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('Wyślij link weryfikacyjny jeszcze raz') }}</button>.
                                 </form>
                             @endif
                         </div>

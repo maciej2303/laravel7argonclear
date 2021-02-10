@@ -1,15 +1,20 @@
 @extends('layouts.app', ['class' => 'bg-default'])
 
 @section('content')
-    @include('layouts.headers.guest')
-    
+    <div class="header bg-gradient-primary py-7 py-lg-8">
+        <div class="container">
+            <div class="header-body text-center mb-7">
+            </div>
+        </div>
+    </div>
+
     <div class="container mt--8 pb-5">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
-                            <small>{{ __('Reset Password') }}</small>
+                            <small>{{ __('Zresetuj hasło') }}</small>
                         </div>
                         <form role="form" method="POST" action="{{ route('password.update') }}">
                             @csrf
@@ -34,7 +39,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Password') }}" type="password" required>
+                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Hasło') }}" type="password" required>
                                 </div>
                                 @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
@@ -47,11 +52,11 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confirmation" required>
+                                    <input class="form-control" placeholder="{{ __('Potwierź hasło') }}" type="password" name="password_confirmation" required>
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary my-4">{{ __('Reset Password') }}</button>
+                                <button type="submit" class="btn btn-primary my-4">{{ __('Resetuj hasło') }}</button>
                             </div>
                         </form>
                     </div>
