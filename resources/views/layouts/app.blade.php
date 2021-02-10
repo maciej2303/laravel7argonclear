@@ -14,7 +14,6 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
         <!-- Icons -->
         <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
-        <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
     </head>
@@ -26,7 +25,7 @@
             @include('layouts.navbars.sidebar')
         @endauth
 
-        <div class="main-content bg-gradient-primary" style="min-height: 100vh">
+        <div class="main-content">
             @include('layouts.navbars.navbar')
             @yield('content')
         </div>
@@ -36,6 +35,7 @@
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://kit.fontawesome.com/3b5993ebce.js" crossorigin="anonymous"></script>
 
         @stack('js')
 
